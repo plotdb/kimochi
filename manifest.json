@@ -1,0 +1,37 @@
+{
+  "manifest_version": 2,
+
+  "name": "template",
+  "description": "chrome extension template",
+  "version": "0.0.1",
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*/*"
+      ],
+      "js": [
+        "assets/jquery/1.10.2/jquery.min.js",
+        "js/base.js",
+        "js/ctrl.js",
+        "js/content.js"
+      ]
+    }
+  ],
+  "browser_action": {
+    "default_icon": {
+      "64": "assets/icon/64.png"
+    },
+    "default_title": "template",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "activeTab",
+    "storage",
+    "identity"
+  ],
+  "icons": {
+    "64": "assets/icon/64.png"
+  },
+  "web_accessible_resources": [],
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com https://code.jquery.com/ https://maxcdn.bootstrapcdn.com/ https://cdnjs.cloudflare.com; object-src 'self'"
+}

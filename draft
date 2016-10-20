@@ -1,0 +1,27 @@
+
+# construct XPATH
+rules = []
+while node
+  parent = node.parentNode
+  node = node.parentNode
+  parent.indexOf(node) -> idx 
+  node.className -> class
+  node.id -> id
+  node.tagName -> tagName
+  rules.push [idx, id, class, tagName]
+  node = parent
+
+# generalize XPATH
+maxlv = Math.max.apply null, rules.map -> it.length
+general = []
+for i from 0 til maxlv
+  diffidx = check(rules.map -> it[i])
+  general.push rules.0.map (d,j) -> if j < diffidx => d else "*"
+
+
+# degeneralize XPATH ?
+degeneralize = []
+for i from maxlv - 1 to 0 by -1
+  diffidx = check(rules.map -> it[i])
+  degeneralize.push rules.0.map  (d,j) -> if j < diffidx => 
+
