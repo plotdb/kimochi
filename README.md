@@ -1,6 +1,4 @@
-template: extension/chrome
+Kimochi - Crawler for Any Web Page
 ========
 
-a chrome extension template, for simple frontend. 
-
-
+気持ちいいですか？
